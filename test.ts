@@ -1,4 +1,5 @@
 import { orderVersions, addOne, getDeepestNode, deepestNode } from './index';
+import { INode } from './interface';
 
 test('order version arr', () => {
   const input = ['1.2', '5.1.1', '5.1', '1.2.1', '4', '1.4.2'];
@@ -50,7 +51,10 @@ test('add one to array', () => {
   expect(addOne(input)).toStrictEqual(output);
 });
 
-class TreeNode {
+class TreeNode implements INode {
+  val: number;
+  left: INode;
+  right: INode;
   constructor(val, left = null, right = null) {
     this.val = val;
     this.left = left;
@@ -100,5 +104,5 @@ test('binary tree', () => {
     )
   );
 
-  expect(deepestNode(root, [])).toBe(5);
+  expect(deepestNode(root)).toBe(5);
 });

@@ -1,5 +1,5 @@
 //order version array;
-
+import { INode, IDeepest } from './interface';
 export const orderVersions = (arr: Array<string>) => {
   return arr.sort(sorter);
 };
@@ -44,11 +44,6 @@ const add = (el1: Array<number>, i: number) => {
 };
 
 //Get deepest node recursively
-interface INode {
-  val: number;
-  left: INode;
-  right: INode;
-}
 
 export const getDeepestNode = (node: INode, stack: Array<number>) => {
   stack.push(node.val);
@@ -61,11 +56,6 @@ export const getDeepestNode = (node: INode, stack: Array<number>) => {
 
   return Math.max(...stack);
 };
-
-interface IDeepest {
-  level: number;
-  node: any;
-}
 
 //Get deepest node while loop
 export const deepestNode = (node: any) => {
