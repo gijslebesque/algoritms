@@ -100,5 +100,5 @@ test('binary tree', () => {
     )
   );
 
-  expect(deepestNode(root, [])).toBe(10);
+  expect(deepestNode(root, [])).toBe(5);
 });
