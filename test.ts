@@ -55,7 +55,7 @@ class TreeNode implements INode {
   val: number;
   left: INode;
   right: INode;
-  constructor(val, left = null, right = null) {
+  constructor(val: number, left = null, right = null) {
     this.val = val;
     this.left = left;
     this.right = right;
